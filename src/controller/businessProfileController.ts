@@ -1,9 +1,8 @@
 import { Request, Response } from 'express';
-
 import { z } from 'zod';
-import { BusinessProfileSchema } from '../models/businessProfileModel';
+import { BusinessProfileSchema } from '../models/businessProfileModel.js';
 import { IBusinessProfile } from '../types/businessProfile';
-import pool from '../db/postgres-pool';
+import pool from '../db/postgres-pool.js';
 
 export const getAllBusinessProfiles = (req: Request, res: Response) => {
   res.status(404).json({

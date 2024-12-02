@@ -14,5 +14,9 @@ if (process.env.MODE === 'DEVELOPMENT') {
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Hello, Railway is working!');
+});
+
 app.use('/api/v1/businessProfile', businessProfileRoute);
 app.use('/api/v1/businessCategory', businessCategoryRoute);

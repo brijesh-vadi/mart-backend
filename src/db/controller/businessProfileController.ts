@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import pool from '../postgres-pool';
+import pool from '../postgres-pool.js';
 import { IBusinessProfile } from '../../types/businessProfile';
-import { BusinessProfileSchema } from '../../models/businessProfileModel';
+import { BusinessProfileSchema } from '../../models/businessProfileModel.js';
 import { z } from 'zod';
 
 export const getAllBusinessProfiles = (req: Request, res: Response) => {

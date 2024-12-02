@@ -1,8 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
-import businessProfileRoute from './routes/businessProfileRoute';
-import businessCategoryRoute from './routes/businessCategoryRoute';
+import businessProfileRoute from './routes/businessProfileRoute.js';
+import businessCategoryRoute from './routes/businessCategoryRoute.js';
 
 dotenv.config();
 

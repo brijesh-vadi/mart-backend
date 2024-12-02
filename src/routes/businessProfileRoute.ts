@@ -5,7 +5,7 @@ import {
   getAllBusinessProfiles,
   getBusinessProfileById,
   updateBusinessProfile,
-} from '../db/controller/businessProfileController';
+} from '../db/controller/businessProfileController.js';
 
 const businessProfileRoute = express.Router();
 

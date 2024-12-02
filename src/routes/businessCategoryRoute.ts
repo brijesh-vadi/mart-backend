@@ -5,7 +5,7 @@ import {
   getAllBusinessCategories,
   getBusinessCategoryById,
   updateBusinessCategory,
-} from '../db/controller/businessCategoryController';
+} from '../db/controller/businessCategoryController.js';
 
 const businessCategoryRoute = express.Router();
 

@@ -20,6 +20,7 @@ export const createBusinessProfile = async (req: Request<{}, {}, IBusinessProfil
         path: error.path.join('.'),
         message: error.message,
       }));
+      console.log('Validation errors:', formattedErrors);
       res.status(400).json({
         status: 'fail',
         message: 'Validation failed',
@@ -57,7 +58,7 @@ export const createBusinessProfile = async (req: Request<{}, {}, IBusinessProfil
 
     const query = `INSERT INTO business_profiles
       (owner_name, business_name, mobile_number, email_address, business_address, business_category_id, is_paid, amount_paid)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8,) RETURNING *`;
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`;
 
     const values = [
       ownerName,

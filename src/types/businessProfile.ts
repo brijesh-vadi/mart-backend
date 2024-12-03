@@ -8,7 +8,6 @@ export interface IBusinessProfile {
   businessCategoryId: string;
   businessCategory: string;
   businessType: string;
-  businessTypeId: string;
   isPaid: boolean;
   amountPaid?: number;
 }

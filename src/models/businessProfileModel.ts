@@ -35,8 +35,6 @@ export const BusinessProfileSchema = z.object({
 
   businessCategoryId: z.string().uuid({ message: 'Business category ID must be a valid UUID' }),
 
-  businessTypeId: z.string().uuid({ message: 'Business type ID must be a valid UUID' }),
-
   isPaid: z.boolean({
     required_error: 'Please provide if user paid or not.',
   }),

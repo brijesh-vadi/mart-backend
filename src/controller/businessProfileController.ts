@@ -37,7 +37,6 @@ export const createBusinessProfile = async (req: Request<{}, {}, IBusinessProfil
       emailAddress,
       businessAddress,
       businessCategoryId,
-      businessTypeId,
       isPaid,
       amountPaid,
     } = req.body;
@@ -57,8 +56,8 @@ export const createBusinessProfile = async (req: Request<{}, {}, IBusinessProfil
     }
 
     const query = `INSERT INTO business_profiles
-      (owner_name, business_name, mobile_number, email_address, business_address, business_category_id, business_type_id, is_paid, amount_paid)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`;
+      (owner_name, business_name, mobile_number, email_address, business_address, business_category_id, is_paid, amount_paid)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8,) RETURNING *`;
 
     const values = [
       ownerName,
@@ -67,7 +66,6 @@ export const createBusinessProfile = async (req: Request<{}, {}, IBusinessProfil
       emailAddress,
       businessAddress,
       businessCategoryId,
-      businessTypeId,
       isPaid,
       amountPaid,
     ];
@@ -80,12 +78,9 @@ export const createBusinessProfile = async (req: Request<{}, {}, IBusinessProfil
         businessCategoryId,
       ]);
 
-      const typeResult = await pool.query('SELECT business_type FROM business_types WHERE id = $1', [businessTypeId]);
-
       const responseData = {
         ...createdBusinessProfile,
         businessCategoryName: categoryResult.rows[0]?.category_name,
-        businessTypeName: typeResult.rows[0]?.business_type,
       };
 
       res.status(201).json({

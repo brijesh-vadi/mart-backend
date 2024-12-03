@@ -15,8 +15,3 @@ export interface IBusinessCategory {
   id: string;
   categoryName: string;
 }
-
-export interface IBusinessType {
-  id: string;
-  businessType: string;
-}

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import pool from '../db/postgres-pool';
+import pool from '../db/postgres-pool.js';
 
 export const getAllBusinessTypes = async (req: Request, res: Response) => {
   try {
